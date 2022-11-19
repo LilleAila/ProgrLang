@@ -12,6 +12,7 @@ TT_PLUS = "PLUS"
 TT_MINUS = "MINUS"
 TT_MUL = "MUL"
 TT_DIV = "DIV"
+TT_MOD = "MOD"
 
 TT_POW = "POW"
 
