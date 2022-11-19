@@ -1,6 +1,6 @@
 from lexer.tokens import *
 from errors.errors import InvalidSyntaxError
-from parser.nodes import *
+from parser_.nodes import *
 
 
 class ParseResult:

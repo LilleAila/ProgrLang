@@ -4,7 +4,7 @@ from interpreter.values import SymbolTable, Context, Number, String, List
 from lexer.tokens import *
 from interpreter.function import BaseFunction
 from lexer.lexer import Lexer
-from parser.parser import Parser
+from parser_.parser import Parser
 import os
 
 
