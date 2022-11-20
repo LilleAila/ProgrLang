@@ -32,7 +32,7 @@ class Lexer:
                 tokens.append(self.make_number())
             elif self.current_char in LETTERS:
                 tokens.append(self.make_identifier())
-            elif self.current_char == "\"":
+            elif self.current_char in ("\"", "\'"):
                 tokens.append(self.make_string())
 
             # Operators
@@ -122,7 +122,7 @@ class Lexer:
 
         escape_characters = {"n": "\n", "t": "\t"}
 
-        while self.current_char != None and (self.current_char != "\""
+        while self.current_char != None and (not self.current_char in ("\"", "\'")
                                              or escape_character):
             if escape_character:
                 string += escape_characters.get(self.current_char,
@@ -142,7 +142,7 @@ class Lexer:
         id_str = ""
         pos_start = self.pos.copy()
 
-        while self.current_char != None and self.current_char in LETTERS_DIGITS + "_":
+        while self.current_char != None and self.current_char in LETTERS_DIGITS:
             id_str += self.current_char
             self.advance()
 

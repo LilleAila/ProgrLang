@@ -101,9 +101,9 @@ class Interpreter:
             result, error = left.get_comparison_lte(right)
         elif node.op_tok.type == TT_GTE:
             result, error = left.get_comparison_gte(right)
-        elif node.op_tok.matches(TT_KEYWORD, "AND"):
+        elif node.op_tok.matches(TT_KEYWORD, "and"):
             result, error = left.anded_by(right)
-        elif node.op_tok.matches(TT_KEYWORD, "OR"):
+        elif node.op_tok.matches(TT_KEYWORD, "or"):
             result, error = left.ored_by(right)
 
         if error:
@@ -120,7 +120,7 @@ class Interpreter:
 
         if node.op_tok.type == TT_MINUS:
             number, error = number.multed_by(Number(-1))
-        elif node.op_tok.matches(TT_KEYWORD, "NOT"):
+        elif node.op_tok.matches(TT_KEYWORD, "not"):
             number, error = number.notted()
 
         if error:
@@ -563,29 +563,29 @@ BuiltInFunction.len = BuiltInFunction("len")
 BuiltInFunction.run = BuiltInFunction("run")
 
 global_symbol_table = SymbolTable()
-global_symbol_table.set("NULL", Number.null)
-global_symbol_table.set("FALSE", Number.false)
-global_symbol_table.set("TRUE", Number.true)
+global_symbol_table.set("null", Number.null)
+global_symbol_table.set("false", Number.false)
+global_symbol_table.set("true", Number.true)
 
-global_symbol_table.set("MATH_PI", Number.math_PI)
-global_symbol_table.set("MATH_E", Number.math_E)
+global_symbol_table.set("pi", Number.math_PI)
+global_symbol_table.set("e", Number.math_E)
 
-global_symbol_table.set("PRINT", BuiltInFunction.print)
-global_symbol_table.set("PRINT_RET", BuiltInFunction.print_ret)
-global_symbol_table.set("INPUT", BuiltInFunction.input)
-global_symbol_table.set("INPUT_INT", BuiltInFunction.input_int)
-global_symbol_table.set("CLEAR", BuiltInFunction.clear)
-global_symbol_table.set("CLS", BuiltInFunction.clear)
-global_symbol_table.set("IS_NUM", BuiltInFunction.is_number)
-global_symbol_table.set("IS_STR", BuiltInFunction.is_string)
-global_symbol_table.set("IS_LIST", BuiltInFunction.is_list)
-global_symbol_table.set("IS_FUN", BuiltInFunction.is_function)
-global_symbol_table.set("APPEND", BuiltInFunction.append)
-global_symbol_table.set("POP", BuiltInFunction.pop)
-global_symbol_table.set("SET", BuiltInFunction.set)
-global_symbol_table.set("EXTEND", BuiltInFunction.extend)
-global_symbol_table.set("LEN", BuiltInFunction.len)
-global_symbol_table.set("RUN", BuiltInFunction.run)
+global_symbol_table.set("print", BuiltInFunction.print)
+global_symbol_table.set("print_ret", BuiltInFunction.print_ret)
+global_symbol_table.set("input", BuiltInFunction.input)
+global_symbol_table.set("input_int", BuiltInFunction.input_int)
+global_symbol_table.set("clear", BuiltInFunction.clear)
+global_symbol_table.set("cls", BuiltInFunction.clear)
+global_symbol_table.set("is_num", BuiltInFunction.is_number)
+global_symbol_table.set("is_str", BuiltInFunction.is_string)
+global_symbol_table.set("is_list", BuiltInFunction.is_list)
+global_symbol_table.set("is_func", BuiltInFunction.is_function)
+global_symbol_table.set("append", BuiltInFunction.append)
+global_symbol_table.set("pop", BuiltInFunction.pop)
+global_symbol_table.set("set", BuiltInFunction.set)
+global_symbol_table.set("extend", BuiltInFunction.extend)
+global_symbol_table.set("len", BuiltInFunction.len)
+global_symbol_table.set("run", BuiltInFunction.run)
 
 
 def run(fn, text):

@@ -1,7 +1,7 @@
 from string import ascii_letters
 
 DIGITS = "0123456789"
-LETTERS = ascii_letters + "æøå"
+LETTERS = ascii_letters + "æøå_"
 LETTERS_DIGITS = LETTERS + DIGITS
 
 TT_INT = "INT"
@@ -13,7 +13,6 @@ TT_MINUS = "MINUS"
 TT_MUL = "MUL"
 TT_DIV = "DIV"
 TT_MOD = "MOD"
-
 TT_POW = "POW"
 
 TT_LPAREN = "LPAREN"
@@ -40,8 +39,8 @@ TT_NEWLINE = "NEWLINE"
 TT_EOF = "EOF"
 
 KEYWORDS = [
-    "VAR", "AND", "OR", "NOT", "IF", "THEN", "ELIF", "ELSE", "FOR", "TO",
-    "STEP", "WHILE", "FUN", "END", "RETURN", "CONTINUE", "BREAK"
+    "var", "and", "or", "not", "if", "then", "elif", "else", "for", "to",
+    "step", "while", "func", "end", "return", "continue", "break"
 ]
 
 
