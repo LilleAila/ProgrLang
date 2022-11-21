@@ -143,3 +143,9 @@ len(list): Get length of list
 clear, cls, clear(), cls(): Clear the screen
 run(filename): Run a file
 ```
+
+## Built-in variables
+```
+math_pi: pi
+math_e: e
+```
